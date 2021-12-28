@@ -44,7 +44,7 @@ namespace ExProHP
             Console.WriteLine("PRICE TAGS:");
             foreach(Product product in products)
             {
-                Console.Write(product);
+                Console.Write(product.PriceTag());
             }
         }
     }
