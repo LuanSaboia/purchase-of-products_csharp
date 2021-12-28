@@ -1,4 +1,3 @@
-﻿using System.Text;
 using System.Globalization;
 namespace ExProHP.Entities
 {
@@ -14,11 +13,10 @@ namespace ExProHP.Entities
             Price = price;
         }
 
-        public override string ToString()
+        public virtual string PriceTag()
         {
-            StringBuilder sb = new StringBuilder();
-            sb.AppendLine(Name + " $ " + Price.ToString("F2", CultureInfo.InvariantCulture));
-            return sb.ToString();
+            return Name + " $ "
+                + Price.ToString("F2", CultureInfo.InvariantCulture);
         }
     }
 }
