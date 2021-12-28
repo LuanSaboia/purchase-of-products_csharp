@@ -1,6 +1,4 @@
-﻿using System.Text;
 using System.Globalization;
-
 namespace ExProHP.Entities
 {
     class ImportedProduct : Product
@@ -18,12 +16,13 @@ namespace ExProHP.Entities
         {
             return Price + CustomsFee;
         }
-        public override string ToString()
+        public override string PriceTag()
         {
-            StringBuilder sb = new StringBuilder();
-            sb.AppendLine(Name + " $ " + TotalPrice().ToString("F2", CultureInfo.InvariantCulture)
-                + " (Customs fee: $ " + CustomsFee.ToString("F2", CultureInfo.InvariantCulture) + ")");
-            return sb.ToString();
+            return Name + " $ "
+                + TotalPrice().ToString("F2", CultureInfo.InvariantCulture)
+                + " (Customs fee: $ "
+                + CustomsFee.ToString("F2", CultureInfo.InvariantCulture)
+                + ")";
         }
     }
 }
